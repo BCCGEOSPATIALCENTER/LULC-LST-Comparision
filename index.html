@@ -2,57 +2,79 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>LST Analysis</title>
 
-    <!-- IMPORTANT: CSS file -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link
+        rel="stylesheet"
+        href="./style.css"
+    >
+
 </head>
+
 
 <body>
 
-    <!-- ================================================= -->
+
+    <!-- ========================================= -->
     <!-- PAGE HEADER -->
-    <!-- ================================================= -->
+    <!-- ========================================= -->
 
     <header class="page-header">
 
-        <h1>LST Analysis</h1>
+        <div class="header-content">
 
-        <p>
-            Land Surface Temperature Analysis
-        </p>
+            <h1>
+                LST Analysis
+            </h1>
+
+            <p>
+                Land Surface Temperature Analysis
+            </p>
+
+        </div>
 
     </header>
 
 
-    <!-- ================================================= -->
-    <!-- MAIN PAGE -->
-    <!-- ================================================= -->
+
+    <!-- ========================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ========================================= -->
 
     <main class="page-container">
 
 
-        <!-- ============================================= -->
-        <!-- CENTER / RESULTS AREA -->
-        <!-- ============================================= -->
+        <!-- ===================================== -->
+        <!-- CENTER RESULTS -->
+        <!-- ===================================== -->
 
         <section class="results-area">
 
+
             <div class="results-header">
 
-                <h2>Results</h2>
+                <h2>
+                    Results
+                </h2>
 
-                <span id="resultStatus"></span>
+                <span id="resultStatus">
+                </span>
 
             </div>
 
 
-            <!-- ========================================= -->
-            <!-- 1. LST IMAGE -->
-            <!-- ========================================= -->
+
+            <!-- ================================= -->
+            <!-- 1. LST -->
+            <!-- ================================= -->
 
             <section class="result-card">
 
@@ -61,15 +83,16 @@
                 </h3>
 
 
-                <!-- Date buttons will be generated here -->
+                <!-- Date buttons -->
 
                 <div
                     id="dateButtons"
-                    class="date-buttons">
+                    class="date-buttons"
+                >
                 </div>
 
 
-                <!-- Image -->
+                <!-- LST IMAGE -->
 
                 <div class="image-container">
 
@@ -80,12 +103,15 @@
                         class="lst-image hidden"
                     >
 
+
                     <div
                         id="imagePlaceholder"
-                        class="placeholder">
+                        class="placeholder"
+                    >
 
                         <p>
-                            Select a date to view the LST image.
+                            Select a date to view
+                            the LST image.
                         </p>
 
                     </div>
@@ -95,9 +121,10 @@
             </section>
 
 
-            <!-- ========================================= -->
+
+            <!-- ================================= -->
             <!-- 2. CSV -->
-            <!-- ========================================= -->
+            <!-- ================================= -->
 
             <section class="result-card">
 
@@ -105,9 +132,11 @@
                     2. Temperature Data
                 </h3>
 
+
                 <p>
-                    Download the temperature comparison
-                    data generated for this analysis.
+                    Download the temperature
+                    comparison data generated
+                    for this analysis.
                 </p>
 
 
@@ -115,7 +144,8 @@
                     id="csvButton"
                     class="download-button disabled"
                     href="#"
-                    download>
+                    download
+                >
 
                     Download CSV
 
@@ -124,9 +154,10 @@
             </section>
 
 
-            <!-- ========================================= -->
+
+            <!-- ================================= -->
             <!-- 3. GRAPHS -->
-            <!-- ========================================= -->
+            <!-- ================================= -->
 
             <section class="result-card">
 
@@ -143,6 +174,7 @@
                         Temperature Comparison
                     </h4>
 
+
                     <div class="graph-container">
 
                         <img
@@ -152,9 +184,11 @@
                             class="graph-image hidden"
                         >
 
+
                         <div
                             id="graph1Placeholder"
-                            class="placeholder">
+                            class="placeholder"
+                        >
 
                             <p>
                                 Graph will appear here.
@@ -167,6 +201,7 @@
                 </div>
 
 
+
                 <!-- GRAPH 2 -->
 
                 <div class="graph-section">
@@ -174,6 +209,7 @@
                     <h4>
                         LST Temperature Difference
                     </h4>
+
 
                     <div class="graph-container">
 
@@ -184,9 +220,11 @@
                             class="graph-image hidden"
                         >
 
+
                         <div
                             id="graph2Placeholder"
-                            class="placeholder">
+                            class="placeholder"
+                        >
 
                             <p>
                                 Graph will appear here.
@@ -204,11 +242,12 @@
 
 
 
-        <!-- ============================================= -->
+        <!-- ===================================== -->
         <!-- RIGHT SIDEBAR -->
-        <!-- ============================================= -->
+        <!-- ===================================== -->
 
         <aside class="control-sidebar">
+
 
             <div class="sidebar-header">
 
@@ -219,6 +258,7 @@
             </div>
 
 
+
             <!-- CITY -->
 
             <div class="form-group">
@@ -226,6 +266,7 @@
                 <label for="cityDropdown">
                     City
                 </label>
+
 
                 <select id="cityDropdown">
 
@@ -238,6 +279,7 @@
             </div>
 
 
+
             <!-- START DATE -->
 
             <div class="form-group">
@@ -246,12 +288,14 @@
                     Start Date
                 </label>
 
+
                 <input
                     type="date"
                     id="startDate"
                 >
 
             </div>
+
 
 
             <!-- END DATE -->
@@ -262,6 +306,7 @@
                     End Date
                 </label>
 
+
                 <input
                     type="date"
                     id="endDate"
@@ -270,32 +315,40 @@
             </div>
 
 
+
             <!-- ERROR -->
 
             <div
                 id="errorMessage"
-                class="error-message hidden">
+                class="error-message hidden"
+            >
             </div>
+
 
 
             <!-- ENTER -->
 
             <button
                 id="enterButton"
-                class="enter-button">
+                class="enter-button"
+            >
 
                 Enter
 
             </button>
 
 
+
             <!-- LOADING -->
 
             <div
                 id="loadingMessage"
-                class="loading-message hidden">
+                class="loading-message hidden"
+            >
 
-                <div class="spinner"></div>
+                <div class="spinner">
+                </div>
+
 
                 <p>
                     Processing LST data...
@@ -309,9 +362,9 @@
 
 
 
-    <!-- ================================================= -->
+    <!-- ========================================= -->
     <!-- FOOTER -->
-    <!-- ================================================= -->
+    <!-- ========================================= -->
 
     <footer>
 
@@ -322,7 +375,10 @@
     </footer>
 
 
-    <script src="./js/app.js"></script>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="./app.js"></script>
 
 </body>
 
