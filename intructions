@@ -1,21 +1,10 @@
-https://github.com/BCCGEOSPATIALCENTER/LULC-LST-Comparision/blob/main/index.html
-
+https://github.com/BCCGEOSPATIALCENTER/LULC-LST-Comparision
 
 git init
 
 git remote add origin https://github.com/BCCGEOSPATIALCENTER/LULC-LST-Comparision.git
 
 git remote -v
-
-origin  https://github.com/BCCGEOSPATIALCENTER/LULC-LST-Comparision.git (fetch)
-origin  https://github.com/BCCGEOSPATIALCENTER/LULC-LST-Comparision.git (push)
-
-git fetch origin
-git branch -a
-
-git pull origin main --allow-unrelated-histories
-
-git add index.html css/style.css js/app.js
 
 git add .
 

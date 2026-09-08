@@ -3,37 +3,219 @@
 
 <head>
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>LST Analysis</title>
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- IMPORTANT: CSS file -->
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-    <header class="header">
-        <div class="header-content">
-            <h1>LST Analysis</h1>
-            <p>
-                Land Surface Temperature Analysis
-            </p>
-        </div>
+    <!-- ================================================= -->
+    <!-- PAGE HEADER -->
+    <!-- ================================================= -->
+
+    <header class="page-header">
+
+        <h1>LST Analysis</h1>
+
+        <p>
+            Land Surface Temperature Analysis
+        </p>
+
     </header>
 
 
-    <main class="main-container">
+    <!-- ================================================= -->
+    <!-- MAIN PAGE -->
+    <!-- ================================================= -->
 
-        <!-- ============================= -->
-        <!-- LEFT SIDEBAR -->
-        <!-- ============================= -->
+    <main class="page-container">
 
-        <aside class="sidebar">
 
-            <div class="sidebar-title">
-                <h2>Analysis Parameters</h2>
+        <!-- ============================================= -->
+        <!-- CENTER / RESULTS AREA -->
+        <!-- ============================================= -->
+
+        <section class="results-area">
+
+            <div class="results-header">
+
+                <h2>Results</h2>
+
+                <span id="resultStatus"></span>
+
+            </div>
+
+
+            <!-- ========================================= -->
+            <!-- 1. LST IMAGE -->
+            <!-- ========================================= -->
+
+            <section class="result-card">
+
+                <h3>
+                    1. Land Surface Temperature
+                </h3>
+
+
+                <!-- Date buttons will be generated here -->
+
+                <div
+                    id="dateButtons"
+                    class="date-buttons">
+                </div>
+
+
+                <!-- Image -->
+
+                <div class="image-container">
+
+                    <img
+                        id="lstImage"
+                        src=""
+                        alt="LST result"
+                        class="lst-image hidden"
+                    >
+
+                    <div
+                        id="imagePlaceholder"
+                        class="placeholder">
+
+                        <p>
+                            Select a date to view the LST image.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- 2. CSV -->
+            <!-- ========================================= -->
+
+            <section class="result-card">
+
+                <h3>
+                    2. Temperature Data
+                </h3>
+
+                <p>
+                    Download the temperature comparison
+                    data generated for this analysis.
+                </p>
+
+
+                <a
+                    id="csvButton"
+                    class="download-button disabled"
+                    href="#"
+                    download>
+
+                    Download CSV
+
+                </a>
+
+            </section>
+
+
+            <!-- ========================================= -->
+            <!-- 3. GRAPHS -->
+            <!-- ========================================= -->
+
+            <section class="result-card">
+
+                <h3>
+                    3. Graphs
+                </h3>
+
+
+                <!-- GRAPH 1 -->
+
+                <div class="graph-section">
+
+                    <h4>
+                        Temperature Comparison
+                    </h4>
+
+                    <div class="graph-container">
+
+                        <img
+                            id="graph1"
+                            src=""
+                            alt="Temperature comparison graph"
+                            class="graph-image hidden"
+                        >
+
+                        <div
+                            id="graph1Placeholder"
+                            class="placeholder">
+
+                            <p>
+                                Graph will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- GRAPH 2 -->
+
+                <div class="graph-section">
+
+                    <h4>
+                        LST Temperature Difference
+                    </h4>
+
+                    <div class="graph-container">
+
+                        <img
+                            id="graph2"
+                            src=""
+                            alt="LST temperature difference graph"
+                            class="graph-image hidden"
+                        >
+
+                        <div
+                            id="graph2Placeholder"
+                            class="placeholder">
+
+                            <p>
+                                Graph will appear here.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+
+        <!-- ============================================= -->
+        <!-- RIGHT SIDEBAR -->
+        <!-- ============================================= -->
+
+        <aside class="control-sidebar">
+
+            <div class="sidebar-header">
+
+                <h2>
+                    Analysis Parameters
+                </h2>
+
             </div>
 
 
@@ -123,199 +305,24 @@
 
         </aside>
 
-
-        <!-- ============================= -->
-        <!-- RESULTS -->
-        <!-- ============================= -->
-
-        <section class="results-container"
-                 id="resultsSection">
-
-            <div class="results-header">
-
-                <h2>Results</h2>
-
-                <span
-                    id="resultStatus"
-                    class="result-status">
-                </span>
-
-            </div>
-
-
-            <!-- ============================= -->
-            <!-- LST IMAGE -->
-            <!-- ============================= -->
-
-            <section class="result-card">
-
-                <div class="card-header">
-
-                    <h3>
-                        1. Land Surface Temperature
-                    </h3>
-
-                </div>
-
-
-                <!-- DATE BUTTONS -->
-
-                <div
-                    id="dateButtons"
-                    class="date-buttons">
-                </div>
-
-
-                <!-- IMAGE -->
-
-                <div class="image-container">
-
-                    <img
-                        id="lstImage"
-                        src=""
-                        alt="LST result"
-                        class="lst-image hidden"
-                    >
-
-                    <div
-                        id="imagePlaceholder"
-                        class="placeholder">
-
-                        <p>
-                            Select a date to view the
-                            LST image.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            <!-- ============================= -->
-            <!-- CSV -->
-            <!-- ============================= -->
-
-            <section class="result-card">
-
-                <div class="card-header">
-
-                    <h3>
-                        2. Temperature Data
-                    </h3>
-
-                </div>
-
-                <p>
-                    Download the temperature comparison
-                    data generated for this analysis.
-                </p>
-
-                <a
-                    id="csvButton"
-                    class="download-button disabled"
-                    href="#"
-                    download>
-
-                    Download CSV
-
-                </a>
-
-            </section>
-
-
-            <!-- ============================= -->
-            <!-- GRAPHS -->
-            <!-- ============================= -->
-
-            <section class="result-card">
-
-                <div class="card-header">
-
-                    <h3>
-                        3. Graphs
-                    </h3>
-
-                </div>
-
-
-                <div class="graph-section">
-
-                    <h4>
-                        Temperature Comparison
-                    </h4>
-
-                    <div class="graph-container">
-
-                        <img
-                            id="graph1"
-                            src=""
-                            alt="Temperature comparison graph"
-                            class="graph-image hidden"
-                        >
-
-                        <div
-                            id="graph1Placeholder"
-                            class="placeholder">
-
-                            <p>
-                                Graph will appear here.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-                <div class="graph-section">
-
-                    <h4>
-                        LST Temperature Difference
-                    </h4>
-
-                    <div class="graph-container">
-
-                        <img
-                            id="graph2"
-                            src=""
-                            alt="LST temperature difference graph"
-                            class="graph-image hidden"
-                        >
-
-                        <div
-                            id="graph2Placeholder"
-                            class="placeholder">
-
-                            <p>
-                                Graph will appear here.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-        </section>
-
     </main>
 
+
+
+    <!-- ================================================= -->
+    <!-- FOOTER -->
+    <!-- ================================================= -->
 
     <footer>
 
         <p>
-            Geospatial Research Center
+            BCC Geospatial Center
         </p>
 
     </footer>
 
 
-    <script src="js/app.js"></script>
+    <script src="./js/app.js"></script>
 
 </body>
 

@@ -1,3 +1,7 @@
+/* =====================================================
+   GLOBAL
+   ===================================================== */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,140 +11,264 @@
 
 body {
     font-family: Arial, Helvetica, sans-serif;
+
     background: #f5f7fa;
+
     color: #222;
+
+    line-height: 1.5;
 }
 
 
-/* ============================= */
-/* HEADER */
-/* ============================= */
 
-.header {
-    background: #ffffff;
+/* =====================================================
+   HEADER
+   ===================================================== */
+
+.page-header {
+
+    background: white;
+
     border-bottom: 1px solid #ddd;
+
+    padding: 25px 40px;
+
 }
 
 
-.header-content {
-    max-width: 1400px;
-    margin: auto;
-    padding: 25px 30px;
-}
+.page-header h1 {
 
+    font-size: 30px;
 
-.header h1 {
-    font-size: 28px;
     margin-bottom: 5px;
+
 }
 
 
-.header p {
+.page-header p {
+
     color: #666;
+
+    font-size: 15px;
+
 }
 
 
-/* ============================= */
-/* MAIN */
-/* ============================= */
 
-.main-container {
-    max-width: 1400px;
+/* =====================================================
+   MAIN PAGE LAYOUT
+   ===================================================== */
+
+.page-container {
+
+    max-width: 1500px;
+
     margin: 30px auto;
+
+    padding: 0 25px;
 
     display: grid;
 
-    grid-template-columns: 280px 1fr;
+    /*
+       CENTER CONTENT
+       +
+       RIGHT SIDEBAR
+    */
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        300px;
 
     gap: 25px;
 
-    padding: 0 20px;
+    align-items: start;
+
 }
 
 
-/* ============================= */
-/* SIDEBAR */
-/* ============================= */
 
-.sidebar {
+/* =====================================================
+   RESULTS AREA
+   ===================================================== */
+
+.results-area {
+
+    min-width: 0;
+
+}
+
+
+.results-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 20px;
+
+}
+
+
+.results-header h2 {
+
+    font-size: 24px;
+
+}
+
+
+#resultStatus {
+
+    color: #666;
+
+    font-size: 14px;
+
+}
+
+
+
+/* =====================================================
+   RESULT CARDS
+   ===================================================== */
+
+.result-card {
+
     background: white;
 
     border: 1px solid #ddd;
 
     border-radius: 8px;
 
-    padding: 22px;
+    padding: 25px;
 
-    height: fit-content;
+    margin-bottom: 25px;
+
+}
+
+
+.result-card h3 {
+
+    font-size: 19px;
+
+    margin-bottom: 18px;
+
+}
+
+
+.result-card p {
+
+    color: #555;
+
+}
+
+
+
+/* =====================================================
+   RIGHT SIDEBAR
+   ===================================================== */
+
+.control-sidebar {
+
+    background: white;
+
+    border: 1px solid #ddd;
+
+    border-radius: 8px;
+
+    padding: 25px;
+
+    /*
+       Keeps sidebar visible
+       while scrolling
+    */
 
     position: sticky;
 
-    top: 20px;
+    top: 25px;
+
 }
 
 
-.sidebar-title {
+.sidebar-header {
+
     margin-bottom: 25px;
+
 }
 
 
-.sidebar-title h2 {
+.sidebar-header h2 {
+
     font-size: 18px;
+
 }
 
 
-/* ============================= */
-/* FORM */
-/* ============================= */
+
+/* =====================================================
+   FORM
+   ===================================================== */
 
 .form-group {
+
     margin-bottom: 20px;
+
 }
 
 
 .form-group label {
+
     display: block;
 
     font-size: 14px;
 
     font-weight: bold;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
+
 }
 
 
 .form-group select,
 .form-group input {
+
     width: 100%;
 
-    padding: 11px;
+    height: 42px;
+
+    padding: 8px 10px;
 
     border: 1px solid #ccc;
 
     border-radius: 5px;
 
+    background: white;
+
     font-size: 14px;
 
-    background: white;
 }
 
 
 .form-group select:focus,
 .form-group input:focus {
+
     outline: none;
 
     border-color: #555;
+
 }
 
 
-/* ============================= */
-/* BUTTON */
-/* ============================= */
+
+/* =====================================================
+   ENTER BUTTON
+   ===================================================== */
 
 .enter-button {
+
     width: 100%;
 
-    padding: 12px;
+    height: 44px;
 
     border: none;
 
@@ -155,26 +283,33 @@ body {
     font-weight: bold;
 
     cursor: pointer;
+
 }
 
 
 .enter-button:hover {
+
     background: #444;
+
 }
 
 
 .enter-button:disabled {
+
     background: #999;
 
     cursor: not-allowed;
+
 }
 
 
-/* ============================= */
-/* ERROR */
-/* ============================= */
+
+/* =====================================================
+   ERROR
+   ===================================================== */
 
 .error-message {
+
     background: #fff1f1;
 
     border: 1px solid #e0a0a0;
@@ -188,19 +323,24 @@ body {
     font-size: 13px;
 
     margin-bottom: 15px;
+
 }
 
 
 .hidden {
+
     display: none !important;
+
 }
 
 
-/* ============================= */
-/* LOADING */
-/* ============================= */
+
+/* =====================================================
+   LOADING
+   ===================================================== */
 
 .loading-message {
+
     text-align: center;
 
     margin-top: 20px;
@@ -208,10 +348,12 @@ body {
     color: #666;
 
     font-size: 13px;
+
 }
 
 
 .spinner {
+
     width: 25px;
 
     height: 25px;
@@ -224,83 +366,31 @@ body {
 
     animation: spin 1s linear infinite;
 
-    margin: auto auto 10px;
+    margin: 0 auto 10px;
+
 }
 
 
 @keyframes spin {
 
-    100% {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
         transform: rotate(360deg);
     }
 
 }
 
 
-/* ============================= */
-/* RESULTS */
-/* ============================= */
 
-.results-container {
-    min-width: 0;
-}
-
-
-.results-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    margin-bottom: 20px;
-}
-
-
-.results-header h2 {
-    font-size: 24px;
-}
-
-
-.result-status {
-    color: #666;
-
-    font-size: 14px;
-}
-
-
-/* ============================= */
-/* RESULT CARD */
-/* ============================= */
-
-.result-card {
-    background: white;
-
-    border: 1px solid #ddd;
-
-    border-radius: 8px;
-
-    padding: 25px;
-
-    margin-bottom: 25px;
-}
-
-
-.card-header {
-    margin-bottom: 20px;
-}
-
-
-.card-header h3 {
-    font-size: 18px;
-}
-
-
-/* ============================= */
-/* DATE BUTTONS */
-/* ============================= */
+/* =====================================================
+   DATE BUTTONS
+   ===================================================== */
 
 .date-buttons {
+
     display: flex;
 
     gap: 8px;
@@ -308,10 +398,12 @@ body {
     flex-wrap: wrap;
 
     margin-bottom: 20px;
+
 }
 
 
 .date-button {
+
     border: 1px solid #bbb;
 
     background: white;
@@ -323,31 +415,42 @@ body {
     cursor: pointer;
 
     font-size: 13px;
+
 }
 
 
 .date-button:hover {
+
     background: #f0f0f0;
+
 }
 
 
 .date-button.active {
+
     background: #222;
 
     color: white;
 
     border-color: #222;
+
 }
 
 
-/* ============================= */
-/* IMAGE */
-/* ============================= */
+
+/* =====================================================
+   LST IMAGE
+   ===================================================== */
 
 .image-container {
+
     width: 100%;
 
-    min-height: 400px;
+    min-height: 450px;
+
+    background: #f7f7f7;
+
+    border-radius: 6px;
 
     display: flex;
 
@@ -355,15 +458,15 @@ body {
 
     align-items: center;
 
-    background: #f7f7f7;
-
-    border-radius: 5px;
-
     overflow: hidden;
+
 }
 
 
 .lst-image {
+
+    display: block;
+
     max-width: 100%;
 
     max-height: 700px;
@@ -372,24 +475,27 @@ body {
 
     height: auto;
 
-    display: block;
 }
 
 
 .placeholder {
+
     color: #888;
 
     text-align: center;
 
     padding: 40px;
+
 }
 
 
-/* ============================= */
-/* CSV */
-/* ============================= */
+
+/* =====================================================
+   CSV
+   ===================================================== */
 
 .download-button {
+
     display: inline-block;
 
     margin-top: 15px;
@@ -405,50 +511,63 @@ body {
     text-decoration: none;
 
     font-size: 14px;
+
 }
 
 
 .download-button:hover {
+
     background: #444;
+
 }
 
 
 .download-button.disabled {
+
     background: #aaa;
 
     pointer-events: none;
 
-    cursor: not-allowed;
 }
 
 
-/* ============================= */
-/* GRAPHS */
-/* ============================= */
+
+/* =====================================================
+   GRAPHS
+   ===================================================== */
 
 .graph-section {
+
     margin-bottom: 35px;
+
 }
 
 
 .graph-section:last-child {
+
     margin-bottom: 0;
+
 }
 
 
 .graph-section h4 {
-    margin-bottom: 12px;
 
     font-size: 16px;
+
+    margin-bottom: 12px;
+
 }
 
 
 .graph-container {
+
     width: 100%;
 
     min-height: 300px;
 
     background: #f7f7f7;
+
+    border-radius: 6px;
 
     display: flex;
 
@@ -456,26 +575,29 @@ body {
 
     align-items: center;
 
-    border-radius: 5px;
-
     overflow: hidden;
+
 }
 
 
 .graph-image {
+
     max-width: 100%;
 
     height: auto;
 
     display: block;
+
 }
 
 
-/* ============================= */
-/* FOOTER */
-/* ============================= */
+
+/* =====================================================
+   FOOTER
+   ===================================================== */
 
 footer {
+
     text-align: center;
 
     padding: 30px;
@@ -483,27 +605,88 @@ footer {
     color: #777;
 
     font-size: 13px;
+
 }
 
 
-/* ============================= */
-/* MOBILE */
-/* ============================= */
 
-@media (max-width: 800px) {
+/* =====================================================
+   TABLET
+   ===================================================== */
 
-    .main-container {
+@media (max-width: 950px) {
+
+    .page-container {
+
         grid-template-columns: 1fr;
+
     }
 
 
-    .sidebar {
+    .control-sidebar {
+
         position: static;
+
+        /*
+           On smaller screens,
+           controls go above results
+        */
+
+        grid-row: 1;
+
+    }
+
+
+    .results-area {
+
+        grid-row: 2;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    .page-container {
+
+        padding: 0 15px;
+
+        margin-top: 15px;
+
+    }
+
+
+    .page-header {
+
+        padding: 20px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 24px;
+
+    }
+
+
+    .result-card {
+
+        padding: 18px;
+
     }
 
 
     .image-container {
+
         min-height: 250px;
+
     }
 
 }
